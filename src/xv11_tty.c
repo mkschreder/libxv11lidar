@@ -15,6 +15,8 @@
 	GNU General Public License for more details.
 */
 
+#ifdef HAVE_TERMIOS_H
+
 #include <termios.h> //struct termios, tcgetattr, tcsetattr, cfsetispeed, tcflush
 #include <fcntl.h> //file open flags
 #include <unistd.h> //read, close
@@ -75,3 +77,4 @@ int xv11_tty_flush(struct xv11_tty *self){
 	return tcflush(self->fd, TCIOFLUSH); 
 }
 
+#endif

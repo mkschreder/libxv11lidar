@@ -21,6 +21,8 @@ AC_ARG_WITH(pkgconfigdir,
 AC_SUBST([pkgconfigdir])
 AC_MSG_NOTICE([pkgconfig directory is ${pkgconfigdir}])
 
+AC_CHECK_HEADERS([termios.h], HAVE_TTY_SUPPORT=1, [HAVE_TTY_SUPPORT=0])
+
 AC_CONFIG_FILES([libxv11.pc])
 
 AC_OUTPUT(Makefile src/Makefile test/Makefile)

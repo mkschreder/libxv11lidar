@@ -17,6 +17,8 @@
 
 #pragma once
 
+#ifdef HAVE_TERMIOS_H
+
 #include <termios.h> 
 
 struct xv11_tty {
@@ -30,3 +32,4 @@ int xv11_tty_flush(struct xv11_tty *self);
 int xv11_tty_process_data(struct xv11_tty *self, struct xv11 *lidar); 
 void xv11_tty_deinit(struct xv11_tty *self); 
 
+#endif
